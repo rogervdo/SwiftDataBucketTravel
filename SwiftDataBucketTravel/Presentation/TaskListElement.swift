@@ -20,9 +20,14 @@ struct TaskListElement: View {
                 Spacer()
                 Text(task.dateAdded, style: .date)
                     .font(.subheadline)
+                    .foregroundColor(.gray)
             }
             Text(task.completed ? "Completed" : "Not Completed")
                 .font(.subheadline)
+                .foregroundColor(task.completed ? .green : .red)
+            Text(task.taskDesc ?? "No Description")
+                .font(.footnote)
+                .foregroundColor(.gray)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .contentShape(Rectangle())
@@ -36,5 +41,5 @@ struct TaskListElement: View {
 }
 
 #Preview {
-    TaskListElement(task: Task(name: "Roger", dateAdded: Date(), completed: true))
+    TaskListElement(task: Task(name: "Roger", taskDesc: "Test1", dateAdded: Date(), completed: true))
 }

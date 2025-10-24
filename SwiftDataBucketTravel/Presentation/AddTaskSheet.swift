@@ -17,6 +17,7 @@ struct AddTaskSheet: View{
 
     @State private var name: String = ""
     @State private var dateAdded : Date = .now
+    @State private var taskDesc: String = ""
     @State private var completed: Bool = false
     @State private var errorMessage: String?
     @State private var showingErrorAlert = false
@@ -39,12 +40,14 @@ struct AddTaskSheet: View{
                 TextField("Task", text: $name)
                 DatePicker("Date", selection: $dateAdded, displayedComponents: .date)
                 Toggle("Completed", isOn: $completed)
+                TextField("Description", text: $taskDesc)
             }
             .navigationTitle(isEditMode ? "Edit Task Goal" : "New Task Goal")
             .navigationBarTitleDisplayMode(.large)
             .onAppear { // POPULAMOS CAMPOS SI EXISTEN YA
                 if let existingGoal = taskToEdit {
                     name = existingGoal.name
+                    taskDesc = existingGoal.taskDesc ?? ""
                     dateAdded = existingGoal.dateAdded
                     completed = existingGoal.completed
                 }
@@ -86,12 +89,14 @@ struct AddTaskSheet: View{
                     return
                 }
                 existingTask.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+                existingTask.taskDesc = taskDesc
                 existingTask.dateAdded = dateAdded
                 existingTask.completed = completed
             } else {
                 // Crear nueva
                 let task = Task(
                     name: name.trimmingCharacters(in: .whitespacesAndNewlines),
+                    taskDesc: taskDesc,
                     dateAdded: dateAdded,
                     completed: completed
                 )
@@ -117,6 +122,6 @@ struct AddTaskSheet: View{
 }
 
 #Preview("Edit Mode") {
-    let sampleGoal = Task(name: "Paris", dateAdded: Date(), completed: false)
+    let sampleGoal = Task(name: "Paris", taskDesc: "TestDesc", dateAdded: Date(), completed: false)
     return AddTaskSheet(taskToEdit: sampleGoal)
 }

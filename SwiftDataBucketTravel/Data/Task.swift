@@ -11,11 +11,13 @@ import SwiftData
 @Model
 class Task {
     var name : String
+    var taskDesc : String?
     var dateAdded : Date
     var completed : Bool
     
-    init (name: String, dateAdded: Date, completed: Bool){
+    init (name: String, taskDesc: String, dateAdded: Date, completed: Bool){
         self.name = name
+        self.taskDesc = taskDesc
         self.dateAdded = dateAdded
         self.completed = completed
     }
