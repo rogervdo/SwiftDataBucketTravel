@@ -6,8 +6,19 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		DBCC1ACA2EAAC2F200D0333E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DB510BBB2EA6C957002A773A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DB510BC22EA6C957002A773A;
+			remoteInfo = SwiftDataBucketTravel;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		DB510BC32EA6C957002A773A /* SwiftDataBucketTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataBucketTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DBCC1AC62EAAC2F200D0333E /* SwiftDataBucketTravelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDataBucketTravelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -16,10 +27,22 @@
 			path = SwiftDataBucketTravel;
 			sourceTree = "<group>";
 		};
+		DBCC1AC72EAAC2F200D0333E /* SwiftDataBucketTravelTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = SwiftDataBucketTravelTests;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DB510BC02EA6C957002A773A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBCC1AC32EAAC2F200D0333E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +56,7 @@
 			isa = PBXGroup;
 			children = (
 				DB510BC52EA6C957002A773A /* SwiftDataBucketTravel */,
+				DBCC1AC72EAAC2F200D0333E /* SwiftDataBucketTravelTests */,
 				DB510BC42EA6C957002A773A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				DB510BC32EA6C957002A773A /* SwiftDataBucketTravel.app */,
+				DBCC1AC62EAAC2F200D0333E /* SwiftDataBucketTravelTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +95,29 @@
 			productReference = DB510BC32EA6C957002A773A /* SwiftDataBucketTravel.app */;
 			productType = "com.apple.product-type.application";
 		};
+		DBCC1AC52EAAC2F200D0333E /* SwiftDataBucketTravelTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DBCC1ACE2EAAC2F200D0333E /* Build configuration list for PBXNativeTarget "SwiftDataBucketTravelTests" */;
+			buildPhases = (
+				DBCC1AC22EAAC2F200D0333E /* Sources */,
+				DBCC1AC32EAAC2F200D0333E /* Frameworks */,
+				DBCC1AC42EAAC2F200D0333E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DBCC1ACB2EAAC2F200D0333E /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				DBCC1AC72EAAC2F200D0333E /* SwiftDataBucketTravelTests */,
+			);
+			name = SwiftDataBucketTravelTests;
+			packageProductDependencies = (
+			);
+			productName = SwiftDataBucketTravelTests;
+			productReference = DBCC1AC62EAAC2F200D0333E /* SwiftDataBucketTravelTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +130,10 @@
 				TargetAttributes = {
 					DB510BC22EA6C957002A773A = {
 						CreatedOnToolsVersion = 26.0.1;
+					};
+					DBCC1AC52EAAC2F200D0333E = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = DB510BC22EA6C957002A773A;
 					};
 				};
 			};
@@ -100,12 +152,20 @@
 			projectRoot = "";
 			targets = (
 				DB510BC22EA6C957002A773A /* SwiftDataBucketTravel */,
+				DBCC1AC52EAAC2F200D0333E /* SwiftDataBucketTravelTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DB510BC12EA6C957002A773A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBCC1AC42EAAC2F200D0333E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +182,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DBCC1AC22EAAC2F200D0333E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DBCC1ACB2EAAC2F200D0333E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DB510BC22EA6C957002A773A /* SwiftDataBucketTravel */;
+			targetProxy = DBCC1ACA2EAAC2F200D0333E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		DB510BCC2EA6C959002A773A /* Debug */ = {
@@ -310,6 +385,48 @@
 			};
 			name = Release;
 		};
+		DBCC1ACC2EAAC2F200D0333E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W42BY2Q86P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rogervdo.SwiftDataBucketTravelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftDataBucketTravel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftDataBucketTravel";
+			};
+			name = Debug;
+		};
+		DBCC1ACD2EAAC2F200D0333E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W42BY2Q86P;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rogervdo.SwiftDataBucketTravelTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftDataBucketTravel.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftDataBucketTravel";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -327,6 +444,15 @@
 			buildConfigurations = (
 				DB510BCF2EA6C959002A773A /* Debug */,
 				DB510BD02EA6C959002A773A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DBCC1ACE2EAAC2F200D0333E /* Build configuration list for PBXNativeTarget "SwiftDataBucketTravelTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DBCC1ACC2EAAC2F200D0333E /* Debug */,
+				DBCC1ACD2EAAC2F200D0333E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
