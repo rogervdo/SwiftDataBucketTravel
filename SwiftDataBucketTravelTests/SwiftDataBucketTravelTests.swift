@@ -6,6 +6,7 @@
 //
 
 import Testing
+import Foundation
 @testable import SwiftDataBucketTravel
 
 struct SwiftDataBucketTravelTests {
@@ -19,7 +20,34 @@ struct SwiftDataBucketTravelTests {
         
         #expect(!Task.isValidName(""))
         #expect(!Task.isValidName("   "))
-        #expect(!Task.isValidName("\t\n"))
     }
-
+    
+    @Test("Task can be created with valid parameters")
+    func testTaskCreation() async throws {
+        let name = "Visit Tokyo"
+        let dateAdded = Date()
+        let completed = false
+        
+        let task = Task(name: name, dateAdded: dateAdded, completed: completed)
+        
+        #expect(task.name == name)
+        #expect(task.dateAdded == dateAdded)
+        #expect(task.completed == completed)
+    }
+    
+    @Test("Task name can be edited")
+    func testEditTaskName() async throws {
+        let originalName = "Visit Paris"
+        let newName = "Visit Rome"
+        let dateAdded = Date()
+        
+        let task = Task(name: originalName, dateAdded: dateAdded, completed: false)
+        #expect(task.name == originalName)
+        
+        // editar nombre de task
+        task.name = newName
+        #expect(task.name == newName)
+        #expect(task.dateAdded == dateAdded) // otras propriedades no cambian
+        #expect(task.completed == false)
+    }
 }

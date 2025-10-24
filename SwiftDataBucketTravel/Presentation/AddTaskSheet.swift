@@ -18,6 +18,8 @@ struct AddTaskSheet: View{
     @State private var name: String = ""
     @State private var dateAdded : Date = .now
     @State private var completed: Bool = false
+    @State private var errorMessage: String?
+    @State private var showingErrorAlert = false
     
     let taskToEdit: Task?
     
@@ -56,26 +58,57 @@ struct AddTaskSheet: View{
                 }
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button("Save"){
-                        if isEditMode {
-                            // Update existing travel goal
-                            if let existingGoal = taskToEdit {
-                                existingGoal.name = name
-                                existingGoal.dateAdded = dateAdded
-                                existingGoal.completed = completed
-                            }
-                        } else {
-                            // Crear
-                            let task = Task(name: name, dateAdded:dateAdded, completed:completed)
-                            context.insert(task)
-                        }
-                        
-                        try! context.save()
-                        dismiss()
+                        saveTask()
                     }
                     .disabled(!Task.isValidName(name))
                 }
             }
+            .alert("Error", isPresented: $showingErrorAlert) {
+                Button("OK") { }
+            } message: {
+                Text(errorMessage ?? "An unknown error occurred")
+            }
         }
+    }
+    
+    
+    private func saveTask() {
+        guard Task.isValidName(name) else {
+            showError("Please enter a valid task name")
+            return
+        }
+        
+        do {
+            if isEditMode {
+                // Actualizar tarea
+                guard let existingTask = taskToEdit else {
+                    showError("Unable to find the task to edit")
+                    return
+                }
+                existingTask.name = name.trimmingCharacters(in: .whitespacesAndNewlines)
+                existingTask.dateAdded = dateAdded
+                existingTask.completed = completed
+            } else {
+                // Crear nueva
+                let task = Task(
+                    name: name.trimmingCharacters(in: .whitespacesAndNewlines),
+                    dateAdded: dateAdded,
+                    completed: completed
+                )
+                context.insert(task)
+            }
+            
+            try context.save()
+            dismiss()
+            
+        } catch {
+            showError("Failed to save task: \(error.localizedDescription)")
+        }
+    }
+    
+    private func showError(_ message: String) {
+        errorMessage = message
+        showingErrorAlert = true
     }
     
 }

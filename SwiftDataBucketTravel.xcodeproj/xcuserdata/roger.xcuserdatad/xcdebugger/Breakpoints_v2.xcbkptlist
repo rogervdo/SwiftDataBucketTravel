@@ -14,8 +14,8 @@
             filePath = "SwiftDataBucketTravelTests/SwiftDataBucketTravelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
             landmarkName = "testNameValidation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,24 +30,8 @@
             filePath = "SwiftDataBucketTravelTests/SwiftDataBucketTravelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "testNameValidation()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "33753B68-299F-4F2A-B8C4-A15CC577DC3B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SwiftDataBucketTravelTests/SwiftDataBucketTravelTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "testNameValidation()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +46,8 @@
             filePath = "SwiftDataBucketTravelTests/SwiftDataBucketTravelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
             landmarkName = "SwiftDataBucketTravelTests"
             landmarkType = "14">
          </BreakpointContent>
