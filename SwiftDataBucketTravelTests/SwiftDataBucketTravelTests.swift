@@ -25,10 +25,11 @@ struct SwiftDataBucketTravelTests {
     @Test("Task can be created with valid parameters")
     func testTaskCreation() async throws {
         let name = "Visit Tokyo"
+        let taskDesc = "Desc default"
         let dateAdded = Date()
         let completed = false
         
-        let task = Task(name: name, dateAdded: dateAdded, completed: completed)
+        let task = Task(name: name, taskDesc: taskDesc, dateAdded: dateAdded, completed: completed)
         
         #expect(task.name == name)
         #expect(task.dateAdded == dateAdded)
@@ -38,10 +39,11 @@ struct SwiftDataBucketTravelTests {
     @Test("Task name can be edited")
     func testEditTaskName() async throws {
         let originalName = "Visit Paris"
+        let taskDesc = "default!"
         let newName = "Visit Rome"
         let dateAdded = Date()
         
-        let task = Task(name: originalName, dateAdded: dateAdded, completed: false)
+        let task = Task(name: originalName, taskDesc: taskDesc, dateAdded: dateAdded, completed: false)
         #expect(task.name == originalName)
         
         // editar nombre de task
